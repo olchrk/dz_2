@@ -1,0 +1,111 @@
+<html>
+    <head>
+    <style>
+     body {
+            margin-left: 40%;
+        }
+    #btn {
+           width:200px;
+           display: block;
+           font-size: 12px;
+           margin: 1px;
+           text-align: center;
+           cursor: pointer;
+           font-weight: 300;
+           border:1px solid #D3D3D3;
+           border-radius: 5px;
+      display: block;
+       }
+       #btn:active {
+           background: radial-gradient(ellipse at top center, #a1d2fb, #0723f5);
+       }
+        input {
+           width: 200px;
+           border: none;
+       }
+    </style>   
+    </head>
+    <body>
+    
+   <input id="input" type="text"> 
+
+       <script>
+        var properties =  [
+    {
+      name: 'Добавить +',
+      value: '+',
+    },
+    {
+      name: 'Добавить -',
+      value: '-',
+    },
+    {
+        name: 'Добавить /',
+        value: '/',
+    },
+    {
+        name: 'Добавить *',
+        value: '*',
+    },
+    {
+      name: '1',
+      value: '1',
+    },
+    {
+      name: '2',
+      value: '2',
+    },
+    {
+        name: '3',
+        value: '3',
+    },
+    {
+        name: '4',
+        value: '4',
+    },     
+    {
+        name: '5',
+        value: '5',
+    },     
+    {
+        name: '6',
+        value: '6',
+    }, 
+    {
+        name: '7',
+        value: '7',
+    }, 
+    {
+        name: '8',
+        value: '8',
+    }, 
+    {
+        name: '9',
+        value: '9',
+    }, 
+    {
+        name: '0',
+        value: '0',
+    }, 
+
+  ];
+    function CreateElements(array) {
+      for (let index = 0; index < array.length; index++){
+        const property = array[index];
+        var input = document.createElement('input');
+        input.type ='button';
+        input.id= 'btn';
+        input.value = property.name;
+        document.body.appendChild(input);
+        input.onclick = function plus(){
+        document.getElementById('input').value+=property.value;
+        
+      };
+    }
+  
+    };
+    
+    CreateElements(properties);   
+        </script> 
+    </body>
+</html>
